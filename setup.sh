@@ -2,8 +2,6 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt-get install nginx -y
 
-sudo apt-get install git -y
-
 sudo systemctl enable nginx
 
 sudo systemctl status nginx
@@ -11,9 +9,9 @@ sudo systemctl status nginx
 sudo echo "server {
         listen 80;
         listen [::]:80;
-        root /home/azureuser/apps/my-notes-app/client/build;
+        root /home/azureuser/apps/ua2_app_server/frontend/build;
         index index.html index.htm index.nginx-debian.html;
-        server_name 20.51.228.239;
+        server_name AZUREIPADDRESS;
         location / {
                     try_files $uri /index.html;
                    }
@@ -27,7 +25,7 @@ sudo echo "server {
            }
 }" >> /etc/nginx/sites-available/ua2_app_server
 
-sudo ln -s /etc/nginx/sites-available/ua2_app_server /etc/nginx/sites-enabled/  
+sudo ln -s /etc/nginx/sites-available/ua2_app_server /etc/nginx/sites-enabled/
 
 sudo service nginx restart
 
