@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://2701148@github.com/2701148/ua2_cloud_computing_webapp.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
